@@ -87,6 +87,11 @@ jobs:
           service_account: ${{env.service_account}}
           access_token_lifetime: 900s
 
+      - id: debug
+        name: Debug
+        run: |
+          gcloud auth list
+      
       - id: gcp-sdk
         name: Set up Cloud SDK
         uses: google-github-actions/setup-gcloud@v2
