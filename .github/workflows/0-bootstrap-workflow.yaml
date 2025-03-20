@@ -93,10 +93,7 @@ jobs:
           access_token_lifetime: 900s
           token_format: 'access_token'
 
-      - id: debug
-        name: Debug
-        run: |
-          gcloud auth list
+
       
       - id: gcp-sdk
         name: Set up Cloud SDK
@@ -104,6 +101,10 @@ jobs:
         with:
           install_components: alpha
 
+      - id: auth-debug
+        name: Debug
+        run: |
+          gcloud auth list
       # copy provider file
 
       - id: tf-config-provider
